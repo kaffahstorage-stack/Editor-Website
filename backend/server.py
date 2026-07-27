@@ -211,7 +211,7 @@ async def generate_image(req: ImageGenRequest):
                 "Kamu adalah generator gambar Vision Studio. Buat satu gambar yang cocok "
                 "dengan permintaan user, kualitas tinggi, komposisi baik."
             ),
-        ).with_model("gemini", "gemini-2.5-flash-image-preview")
+        ).with_model("gemini", "gemini-2.5-flash-image")
 
         file_contents = []
         if req.reference_image_base64:
@@ -248,7 +248,7 @@ async def edit_image(req: ImageEditRequest):
                 "foto pertama. Foto berikutnya (jika ada) adalah referensi gaya/warna/mood. "
                 "Kembalikan satu gambar hasil edit dengan kualitas tinggi."
             ),
-        ).with_model("gemini", "gemini-2.5-flash-image-preview")
+        ).with_model("gemini", "gemini-2.5-flash-image")
 
         file_contents = [ImageContent(image_base64=req.source_image_base64)]
         if req.reference_image_base64:
