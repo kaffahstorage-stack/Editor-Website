@@ -1,0 +1,135 @@
+{
+  "theme": "Apple-Like Premium Creative Co-Pilot",
+  "description": "A very modern, elegant, premium, minimalist web application acting as a creative co-pilot. It is NOT a standard Photoshop clone. Priority is a white background theme with highly refined typography, generous whitespace, subtle rounded corners, and tasteful glassmorphism.",
+  "typography": {
+    "fonts": [
+      {
+        "name": "Cabinet Grotesk",
+        "type": "heading",
+        "import_url": "https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@800,500,700,400,900&display=swap",
+        "description": "Used for all headings to give an unexpected, high-end editorial and modern feel. Do NOT use Inter for headings."
+      },
+      {
+        "name": "Manrope",
+        "type": "body",
+        "import_url": "https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600&display=swap",
+        "description": "Clean, highly readable geometric sans-serif for UI text, chat bubbles, and paragraphs."
+      }
+    ],
+    "rules": {
+      "h1": "text-5xl sm:text-6xl lg:text-7xl font-black tracking-tighter leading-none",
+      "h2": "text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight",
+      "h3": "text-2xl sm:text-3xl font-semibold tracking-tight",
+      "body": "text-base sm:text-lg font-medium leading-relaxed tracking-normal",
+      "labels": "text-xs font-bold uppercase tracking-[0.2em]"
+    }
+  },
+  "colors": {
+    "light_mode": {
+      "background": "#FFFFFF",
+      "surface": "#F5F5F7",
+      "surface_glass": "rgba(255, 255, 255, 0.7)",
+      "border": "rgba(0, 0, 0, 0.05)",
+      "text_primary": "#0A0A0A",
+      "text_secondary": "#86868B",
+      "accent_primary": "#000000",
+      "ai_accent": "linear-gradient(135deg, #E2E2E2 0%, #FFFFFF 100%)",
+      "chat_user": "#0A0A0A",
+      "chat_ai": "#F5F5F7"
+    },
+    "dark_mode": {
+      "background": "#000000",
+      "surface": "#1C1C1E",
+      "surface_glass": "rgba(28, 28, 30, 0.7)",
+      "border": "rgba(255, 255, 255, 0.1)",
+      "text_primary": "#F5F5F7",
+      "text_secondary": "#86868B",
+      "accent_primary": "#FFFFFF",
+      "ai_accent": "linear-gradient(135deg, #2A2A2D 0%, #1C1C1E 100%)",
+      "chat_user": "#FFFFFF",
+      "chat_ai": "#1C1C1E"
+    },
+    "rules": {
+      "forbidden": ["#7351B7", "purple gradients for AI", "generic dark blue SaaS colors"],
+      "accents": "Use monochromatic contrast (Black/White) for primary actions. Use very subtle, sophisticated cool grays or warm silver for AI elements. NO cheap gradients."
+    }
+  },
+  "spacing_and_layout": {
+    "containers": "max-w-[1400px] mx-auto px-6 md:px-12",
+    "section_spacing": "py-24 md:py-32",
+    "card_padding": "p-8 md:p-12",
+    "grid_bento": "grid grid-cols-1 md:grid-cols-6 lg:grid-cols-12 gap-6 lg:gap-8",
+    "radii": {
+      "cards": "rounded-[32px]",
+      "buttons": "rounded-full",
+      "chat_bubbles": "rounded-[24px]"
+    }
+  },
+  "components": {
+    "hero": {
+      "layout": "Centered or left-aligned massive typography. Focus on the question: 'Apa yang ingin kamu buat hari ini?'",
+      "styling": "High contrast, pure minimal. No messy backgrounds."
+    },
+    "action_cards": {
+      "layout": "Bento Grid Mode A (Tetris Grid). Span logic to make cards unequal and interesting. E.g., 'Edit Foto' spans 6 cols, 'AI Creative Assistant' spans 12 cols.",
+      "styling": "Apple Crystal Glassmorphism (backdrop-blur-2xl, bg-white/70, 1px inner border white/40) OR Solid Surface (#F5F5F7). Hover states lift the card slightly (-translate-y-2) with a very soft shadow (shadow-[0_20px_40px_rgba(0,0,0,0.08)]).",
+      "content": "Include the Unsplash images provided, utilizing masking or beautiful object-fit."
+    },
+    "chat_interface": {
+      "layout": "Apple Messages style layout. Professional, clean.",
+      "bubbles": "User: Black background, White text. AI: Light Gray (#F5F5F7) background, Black text. Maximum border radius (rounded-[24px]), except for the tail end."
+    },
+    "buttons": {
+      "styling": "Pill-shaped (rounded-full). Pure Black with White text for primary. Minimalist scale-down on click (active:scale-95). Subtle ring on focus."
+    },
+    "editor_workspace": {
+      "layout": "Split view: Large preview area (70%) + Floating Chat/Context Panel (30%).",
+      "styling": "Use dark mode locally for the preview container (to focus on media) while keeping the chat panel in the user's preferred theme."
+    }
+  },
+  "motion_and_interactions": {
+    "page_load": "Staggered fade-up for hero text and bento grid cards.",
+    "hover_states": "Cards scale by 1.02 and lift slightly. Images inside cards slowly zoom in (scale-105 over 1s) on hover.",
+    "chat_animation": "Messages appear with a gentle spring animation (y: 10 to 0, opacity: 0 to 1).",
+    "libraries": ["framer-motion", "lucide-react"]
+  },
+  "image_urls": {
+    "edit_photo": {
+      "url": "https://images.unsplash.com/photo-1765383563504-63f95cab942c?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA2MTJ8MHwxfHNlYXJjaHwzfHxjcmVhdGl2ZSUyMHBob3RvZ3JhcGh5JTIwc3R1ZGlvfGVufDB8fHx8MTc4NTEyMDQ3NXww&ixlib=rb-4.1.0&q=85",
+      "description": "Studio setup for Edit Photo card."
+    },
+    "edit_video": {
+      "url": "https://images.unsplash.com/photo-1594394489098-74ac04c0fc2e?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1NzR8MHwxfHNlYXJjaHwyfHxjaW5lbWF0aWMlMjB2aWRlbyUyMHJlY29yZGluZ3xlbnwwfHx8fDE3ODUxMjA0NzV8MA&ixlib=rb-4.1.0&q=85",
+      "description": "Cinematic camera for Edit Video card."
+    },
+    "ai_generate": {
+      "url": "https://images.unsplash.com/photo-1583591900414-7031eb309cb6?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjY2NzN8MHwxfHNlYXJjaHwxfHxtaW5pbWFsaXN0JTIwYWJzdHJhY3QlMjBhcnQlMjB3aGl0ZXxlbnwwfHx8fDE3ODUxMjA0NzV8MA&ixlib=rb-4.1.0&q=85",
+      "description": "Abstract white/purple art for AI Generation cards."
+    }
+  },
+  "instructions_to_main_agent": [
+    "1. FRAMEWORK: Use React, Tailwind CSS, Framer Motion, and Lucide React. Prioritize a mobile-first, highly responsive approach.",
+    "2. THEME SETUP: Force a White dominant theme. Do not build a generic dark mode dashboard unless explicitly toggled by the user. Inject Fontshare (Cabinet Grotesk) and Google Fonts (Manrope) into the index.html or global CSS.",
+    "3. TYPOGRAPHY: Apply font-cabinet to all standard h1-h6 tags. Use tracking-tight or tracking-tighter for large headings. Keep body text highly legible in Manrope.",
+    "4. HERO SECTION: Build a massive, high-contrast hero section with 'Apa yang ingin kamu buat hari ini?' as the focal point. Use minimal surrounding visual noise.",
+    "5. BENTO GRID: Implement the 6 main actions (Edit Foto, Edit Video, Buat Gambar AI, Buat Video AI, AI Creative Assistant, Project Saya) using an asymmetric grid layout (Tetris style). Avoid perfect symmetry.",
+    "6. CHAT UI: The conversational editor must NOT look like ChatGPT. It should look like an elegant Apple Messages thread. Use pure black/white/light gray bubbles with rounded-[24px] corners.",
+    "7. COMPONENTS: Build custom Shadcn-like components (or use pure Tailwind/Framer) for Selectors, Modals, and Upload Dropzones. Ensure no component uses an entirely transparent background that overlaps content.",
+    "8. WORKFLOWS: Ensure the 'Edit Photo' and 'Edit Video' workflows implement the 'Upload -> Reference -> Chat -> Generate' pipeline cleanly, using steps or side-by-side split screens.",
+    "9. PWA: Include basic PWA meta tags and a mock 'Install App' prompt to fulfill the requirement.",
+    "10. TESTING: Add 'data-testid' attributes to all buttons, links, and major panels."
+  ],
+  "universal_guidelines_for_main_agent": [
+    "You tend to converge toward generic, 'on distribution' outputs. Avoid this: make creative, distinctive frontends that surprise and delight.",
+    "Dark colors look good when used independently without gradients. DO NOT use dark colors as gradients.",
+    "Don't make generic centered layouts, simplistic gradients, and uniform styling.",
+    "Create depth through layered design elements with z-index hierarchy and soft, diffuse shadows.",
+    "Use glass-morphism effects with backdrop filters (12-24px blur) combined with a subtle 1px border.",
+    "You MUST NOT apply universal transition (e.g., transition: all). Always add transitions for specific interactive elements.",
+    "You MUST NOT center align the app container in CSS. Keep natural reading flow.",
+    "Always use modern button styles like pill-shaped, with interaction animations & scale down on click.",
+    "NEVER use AI assistant Emoji characters (like 🤖🧠💭💡🔮🎯) for icons. Use Phosphor or Lucide icons.",
+    "Every interaction needs micro-animations - hover states, transitions, parallax effects, and entrance animations.",
+    "Use 2-3x more spacing than feels comfortable (p-8, p-12). Cramped designs look cheap."
+  ]
+}
